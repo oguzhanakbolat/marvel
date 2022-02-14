@@ -1,0 +1,137 @@
+@import 'mixins';
+@import 'color';
+
+.container {
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+  background: $black;
+
+  .main {
+    min-height: 100vh;
+    width: 100%;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    
+    header {
+      width: 100%;
+      background: url('/header.png');
+      border-bottom: 2px solid $gray;
+      margin-bottom: 50px;
+      background-size: cover;
+      background-position: center top;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 560px;
+
+      img {
+        box-shadow: 0 0 3px 3px rgba($white, 0.5);
+        border: 3px solid $black;
+      }
+
+      @include desktop() {
+        height: 400px;
+      }
+
+      @include tablet() {
+        height: 300px;
+      }
+    }
+
+    .grid {
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      flex-wrap: wrap;
+      max-width: 1330px;
+      margin-bottom: 50px;
+
+      @include desktop() {
+        max-width: 1000px;
+      }
+
+      @include tablet() {
+        max-width: 546px;
+      }
+
+      @include mobile() {
+        max-width: 100%;
+      }
+
+      h3 {
+        font-size: 21px;
+        background: rgba($black, 0.7);
+        color: $white;
+        border-radius: 0 0 9px 9px;
+        transition: all 0.15s ease;
+      }
+      
+      p {
+        margin: 5px 0;
+        color: $white;
+        font-size: 16px;
+      }
+
+      ul {
+        display: flex;
+        flex-direction: column;
+        list-style: none;
+        margin: 30px 0;
+        
+        li {
+          display: flex;
+
+          margin: 5px 0;
+          padding-bottom: 5px;
+          color: $white;
+          font-size: 16px;
+          border-bottom: 1px solid $gray;
+
+          &:last-child {
+            border: 0;
+          }
+        }
+      
+        h2 {
+          font-size: 21px;
+          background: rgba($black, 0.7);
+          color: $white;
+          border-radius: 0 0 9px 9px;
+          transition: all 0.15s ease;
+        }
+        
+        p {
+          margin: 5px 0;
+          color: $white;
+          font-size: 14px;
+        }
+      }
+    }
+  }
+
+  .footer {
+    display: flex;
+    flex: 1;
+    border-top: 2px solid $gray;
+    justify-content: center;
+    align-items: center;
+
+    a {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 82px;
+      color: $white;
+
+      .logo {
+        height: 52px;
+        width: 130px;
+        margin-left: 16px;
+      }
+    }
+  }
+}

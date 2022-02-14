@@ -1,0 +1,59 @@
+@import 'mixins';
+@import 'color';
+
+.card {
+  display: flex;
+  margin: 16px;
+  padding: 16px;
+  border: 2px solid $gray;
+  border-radius: 10px;
+  transition: all 0.15s ease;
+  width: 293px;
+  min-height: 293px;
+  cursor: pointer;
+  position: relative;
+
+
+  @include desktop() {
+    width: 218px;
+    min-height: 218px;
+  }
+
+  @include tablet() {
+    width: 241px;
+    min-height: 241px;
+  }
+
+  @include mobile() {
+    width: 100%;
+    min-height: 576;
+  }
+
+  img {
+    width: 100%;
+    border-radius: 10px;
+  }
+
+  h2 {
+    position: absolute;
+    padding: 16px;
+    font-size: 21px;
+    bottom: -2px;;
+    left: 16px;
+    right: 16px;
+    background: rgba($black, 0.7);
+    color: $white;
+    border-radius: 0 0 9px 9px;
+    transition: all 0.15s ease;
+  }
+
+  &:hover,
+  &:focus,
+  &:active {
+    border-color: $blue;
+
+    h2 {
+      background: rgba($blue, 0.7);
+    }
+  }
+}
