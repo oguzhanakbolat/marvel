@@ -1,14 +1,14 @@
-
+import React from 'react';
 import { Provider } from 'react-redux';
 import { store } from '../stores/store';
 import '../styles/globals.scss';
 
 function MyApp({ Component, pageProps }) {
-  return (
+	return (
 		<Provider store={store}>
-      <Component {...pageProps} />
-    </Provider>
-  )
+			<Component {...pageProps} />
+		</Provider>
+	);
 }
 
-export default MyApp
+export default MyApp;

@@ -5,6 +5,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { getCharacterDetailAsync } from '../../stores/listSlice';
 import styles from '../../styles/Detail.module.scss';
 import Footer from '../../components/Footer';
+import Link from 'next/link';
 
 export default function Detail() {
 	const { list } = useSelector(state => state);
@@ -63,20 +64,32 @@ export default function Detail() {
 				list.character && 
 				<main className={styles.main}>
 					<header>
-						<img src={list.character?.thumbnail?.path + '/standard_fantastic.jpg'} />
+						{
+							!list.loading && <img src={list.character?.thumbnail?.path + '/standard_fantastic.jpg'} />
+						}
+						
 					</header>
 
 					<div className={styles.grid}>
-						<h3>{list.character?.name}</h3>
-						<p>{list.character?.description}</p>
+						{
+							!list.loading && 
+							<>
+								<h3>{list.character?.name}</h3>
+								<p>{list.character?.description}</p>
 
-						<ul>
-							{
-								comics.map((item, index) =>
-									<li key={index}>{item.date} - {item.name}</li>
-								)
-							}
-						</ul>
+								<ul>
+									{
+										comics.map((item, index) =>
+											<li key={index}>{item.date} - {item.name}</li>
+										)
+									}
+								</ul>
+								
+							</>
+						}
+						<Link href={'/'}>
+							<h4>Geri</h4>
+						</Link>
 					</div>
 				</main>
 			}

@@ -69,6 +69,16 @@
         border-radius: 0 0 9px 9px;
         transition: all 0.15s ease;
       }
+
+      h4 {
+        font-size: 16px;
+        background: $white;
+        color: $gray;
+        border-radius: 3px;
+        padding: 7px;
+        transition: all 0.15s ease;
+        cursor: pointer;
+      }
       
       p {
         margin: 5px 0;
